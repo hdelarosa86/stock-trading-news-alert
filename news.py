@@ -1,7 +1,8 @@
 import requests
+import os
 
 ENDPOINT = 'https://newsapi.org/v2/everything'
-API_KEY = '7af914166ad2419c8a63bef343e3fc50'
+API_KEY = os.environ['NEWS_API_KEY']
 COMPANY_NAME = 'Tesla Inc'
 
 news_params = {

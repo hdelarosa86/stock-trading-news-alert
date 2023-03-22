@@ -1,7 +1,8 @@
 import requests
+import os
 STOCK = 'TSLA'
 ENDPOINT = 'https://www.alphavantage.co/query'
-API_KEY = 'PW5QDZUOXC7WH41Z'
+API_KEY = os.environ['ALPHAVANTAGE_API_KEY']
 
 stock_params = {
     'function': 'TIME_SERIES_DAILY_ADJUSTED',
@@ -12,5 +13,3 @@ stock_params = {
 response = requests.get(ENDPOINT, params=stock_params)
 response.raise_for_status()
 stock_data = response.json()['Time Series (Daily)']
-
-
